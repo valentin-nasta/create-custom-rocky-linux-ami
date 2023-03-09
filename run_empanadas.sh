@@ -5,7 +5,7 @@
 SCRIPT_PATH=`realpath ${BASH_SOURCE[0]}`
 SCRIPT_DIR=`dirname $SCRIPT_PATH`
 
-cd ${SCRIPT_DIR}/transfer; wget -q -c https://download.rockylinux.org/pub/rocky/9/isos/x86_64/Rocky-9.1-x86_64-dvd.iso
+cd ${SCRIPT_DIR}/transfer; wget -c https://download.rockylinux.org/pub/rocky/9/isos/x86_64/Rocky-9.1-x86_64-dvd.iso
 cd ${SCRIPT_DIR}/transfer; git clone --branch stable https://github.com/valentin-nasta/oz.git; git clone --branch devel https://github.com/rocky-linux/sig-core-toolkit.git; git clone --branch r9 https://github.com/rocky-linux/kickstarts.git; 
 cd ${SCRIPT_DIR}; sudo podman build -t empanadas:latest -f transfer/sig-core-toolkit/iso/empanadas/Containerfile.imagefactory
 
