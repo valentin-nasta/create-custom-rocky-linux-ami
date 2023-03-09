@@ -12,6 +12,11 @@ inside container:
 imagefactory --debug --verbose --timeout 3600 base_image --parameter generate_icicle false --parameter oz_overrides "{'libvirt': {'memory': 2048}, 'custom': {'useuefi': 'no'}}" --file-parameter install_script /transfer/kickstarts/Rocky-9-EC2-Base.ks /transfer/iso-template.xml 2>&1 | tee /transfer/run-output-iso.txt
 ```
 
+on the host:
+```bash
+img=GENERATED_UUID; ./publish-disk-to-aws.sh $img.body /var/lib/imagefactory/storage/$img.body
+```
+
 Custom inline policy `allow-access-to-custom-software-bucket` for the `arn:aws:iam::AWS_ACCOUNT_ID:user/ami-uploader` user.
 ```json
 {
