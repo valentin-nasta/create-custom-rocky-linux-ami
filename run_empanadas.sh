@@ -29,6 +29,3 @@ empanadas() {
     empanadas:latest $@
 }
 empanadas $1
-# 
-# imagefactory --debug --verbose --timeout 3600 base_image --parameter generate_icicle false --parameter oz_overrides "{'libvirt': {'memory': 2048}, 'custom': {'useuefi': 'no'}}" --file-parameter install_script /transfer/kiRocky-9-EC2-Base.ks /transfer/iso-template.xml 2>&1 | tee /transfer/run-output-iso.txt
-# 
