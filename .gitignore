@@ -1,0 +1,7 @@
+.idea
+transfer/*iso
+transfer/oz
+transfer/sig-core-toolkit
+transfer/kickstarts
+transfer/*body
+transfer/run-output-iso*txt

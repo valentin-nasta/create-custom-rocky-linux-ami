@@ -1,0 +1,23 @@
+<template>
+    <name>Rocky-9-EC2-Custom-URL</name>
+    <os>
+        <name>RHEL-9</name>
+        <version>1</version>
+        <arch>x86_64</arch>
+        <install type='url'>
+            <url>https://download.rockylinux.org/stg/rocky/9/BaseOS/x86_64/os</url>
+            <extras>
+                <directory source="file:///extra" destination="extra"/>
+                <directory source="file:///sources" destination="sources"/>
+                <file source="file:///image-version.json" destination="image-version.json"/>
+            </extras>
+        </install>
+        <icicle>
+            <extra_command>rpm -qa --qf '%{NAME},%{VERSION},%{RELEASE},%{ARCH},%{EPOCH},%{SIZE},%{SIGMD5},%{BUILDTIME}\n'</extra_command>
+        </icicle>
+    </os>
+    <description>Rocky-9-EC2-Custom-URL</description>
+    <disk>
+        <size>10G</size>
+    </disk>
+</template>
